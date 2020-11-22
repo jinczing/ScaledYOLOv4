@@ -383,6 +383,10 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
                     nd += 1  # print('WARNING: duplicate rows in %s' % self.label_files[i])  # duplicate rows
                 if single_cls:
                     l[:, 0] = 0  # force dataset into single-class mode
+
+                # hack around non-index-aligned label
+                l[:, 0] -= 1
+
                 self.labels[i] = l
                 nf += 1  # file found
 
