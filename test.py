@@ -20,6 +20,8 @@ from utils.torch_utils import select_device, time_synchronized
 from models.models import *
 #from utils.datasets import *
 
+NAME_FILE = './data/SVHN.names'
+
 def load_classes(path):
     # Loads *.names file at 'path'
     with open(path, 'r') as f:
@@ -98,7 +100,7 @@ def test(data,
     try:
         names = model.names if hasattr(model, 'names') else model.module.names
     except:
-        names = load_classes(opt.names)
+        names = load_classes(NAME_FILE)
     coco91class = coco80_to_coco91_class()
     s = ('%20s' + '%12s' * 6) % ('Class', 'Images', 'Targets', 'P', 'R', 'mAP@.5', 'mAP@.5:.95')
     p, r, f1, mp, mr, map50, map, t0, t1 = 0., 0., 0., 0., 0., 0., 0., 0., 0.
