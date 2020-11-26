@@ -12,7 +12,7 @@ def parse(in_path, out_path, conf_thres):
 	current = -1
 	for box in json_dict:
 	    if current != box['image_id'] - 1:
-	        for i in range(box['image_id'] - 1 - cur):
+	        for i in range(box['image_id'] - 1 - current):
 	            output.append({'bbox':[], 'score':[], 'label':[]})
 	        current = box['image_id'] - 1
 	    if float(box['score']) < conf_thres:
@@ -31,5 +31,5 @@ if __name__ == '__main__':
     parser.add_argument('--out-path', type=str, default='./output.json', help='output path')
     parser.add_argument('--conf-thres', type=float, default=0.0, help='confidence threshold for predicted boxes')
     opt = parser.parse_args()
-    
-    parse(opt.in_path, opt.out_path, conf_thres)
+
+    parse(opt.in_path, opt.out_path, opt.conf_thres)
