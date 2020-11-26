@@ -1,3 +1,19 @@
+# YOLOv4-CSP for SVHN
+
+This fork is customized for Street View House Number dataset. The [train](https://drive.google.com/file/d/1_-x7BHGxmtWilghAs1983hxfKQJX7rpr/view?usp=sharing), [validation](https://drive.google.com/file/d/1lyyNq4-VFci70hMzmTG_IO7V3IKHmT28/view?usp=sharing), [test](https://drive.google.com/file/d/1eQ8cv6TomX3bR_RzrGS3d_cJWC7Xc2ER/view?usp=sharing) data , and pretrained [weights](https://drive.google.com/file/d/1-TOk_hSTVv4cMHA1PIuTDUEu9PX-XfgW/view?usp=sharing) can be downloaded.
+
+
+
+### Inference
+
+To inference, upload the downloaded {dataset}.zip and pretrained weights to your Google drive, and execute [this](https://colab.research.google.com/drive/1gUsda5kVHcZ5SFiIyl8w-ux5TaJuvPdA?usp=sharing) Google Colab Notebook from scratch with modifying paths. For changing parameters, change data/hyp.finetune.yaml or models/yolov4-csp.cfg.
+
+
+
+### Results
+
+0.65395 mAP on test dataset
+
 # YOLOv4-CSP
 
 This is the implementation of "[Scaled-YOLOv4: Scaling Cross Stage Partial Network](https://arxiv.org/abs/2011.08036)" using PyTorch framwork.

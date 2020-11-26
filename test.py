@@ -233,7 +233,7 @@ def test(data,
 
     # Save JSON
     if save_json and len(jdict):
-        f = 'detections_val2017_%s_results.json' % \
+        f = 'detections_SVHN_results.json' % \
             (weights.split(os.sep)[-1].replace('.pt', '') if isinstance(weights, str) else '')  # filename
         print('\nCOCO mAP with pycocotools... saving %s...' % f)
         with open(f, 'w') as file:
